@@ -7,6 +7,7 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject Obstacle = null;
     [SerializeField] private float SpawnInterval = 1;
+    public GameObject ObstacleTrigger;
     private float NextSpawn = 0;
 
     void Update()
@@ -17,6 +18,7 @@ public class ObstacleSpawner : MonoBehaviour
             Vector3 SpawnPos = new Vector3(8, Random.Range(-3, 3), 0);
 
             Instantiate(Obstacle, SpawnPos, Quaternion.identity);
+            Instantiate(ObstacleTrigger, SpawnPos, Quaternion.identity);
         }
     }
 }
